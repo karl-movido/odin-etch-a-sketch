@@ -14,11 +14,12 @@ let size;
 
 const createBtn = document.getElementById('new-canvas');
 createBtn.addEventListener('click', () => {
-  size = prompt('Enter canvas size. Only up to 100.');
+  const input = Number(prompt('Enter canvas size. Only up to 100.'));
   if (size > 100) {
     alert('Invalid canvas size');
     return;
   }
+  size = input;
   createCanvas(size);
 });
 
@@ -37,6 +38,11 @@ function createCanvas(size) {
     container.appendChild(cell);
   }
 }
+
+const clearCanvas = document.getElementById('clear-canvas');
+clearCanvas.addEventListener('click', () => {
+  createCanvas(size);
+});
 
 let color = null;
 let activeBtn = null;
