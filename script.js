@@ -4,7 +4,11 @@ let size;
 
 const createBtn = document.getElementById('new-canvas');
 createBtn.addEventListener('click', () => {
-  size = prompt('Enter canvas size');
+  size = prompt('Enter canvas size. Only up to 100.');
+  if (size > 100) {
+    alert('Invalid canvas size');
+    return;
+  }
   createCanvas(size);
 });
 
