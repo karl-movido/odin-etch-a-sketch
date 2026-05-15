@@ -9,3 +9,9 @@ for (let i = 0; i < 16 * 16; i++) {
 
   container.appendChild(cell);
 }
+
+container.addEventListener('mouseover', (e) => {
+  if (e.target.classList.contains('cell')) {
+    e.target.style.backgroundColor = 'black';
+  }
+});
