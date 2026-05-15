@@ -1,13 +1,27 @@
 const container = document.getElementById('container');
 
-for (let i = 0; i < 16 * 16; i++) {
-  const cell = document.createElement('div');
-  cell.classList.add('cell');
+let size;
 
-  cell.style.width = '20px';
-  cell.style.height = '20px';
+const createBtn = document.getElementById('new-canvas');
+createBtn.addEventListener('click', () => {
+  size = prompt('Enter canvas size');
+  createCanvas(size);
+});
 
-  container.appendChild(cell);
+function createCanvas(size) {
+  container.innerHTML = '';
+
+  const cellSize = 920 / size;
+
+  for (let i = 0; i < size * size; i++) {
+    const cell = document.createElement('div');
+    cell.classList.add('cell');
+
+    cell.style.width = `${cellSize}px`;
+    cell.style.height = `${cellSize}px`;
+
+    container.appendChild(cell);
+  }
 }
 
 container.addEventListener('mouseover', (e) => {
