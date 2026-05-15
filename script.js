@@ -1,5 +1,15 @@
 const container = document.getElementById('container');
 
+for (let i = 0; i < 16 * 16; i++) {
+  const cell = document.createElement('div');
+  cell.classList.add('cell');
+
+  cell.style.width = `${720 / 16}px`;
+  cell.style.height = `${720 / 16}px`;
+
+  container.appendChild(cell);
+}
+
 let size;
 
 const createBtn = document.getElementById('new-canvas');
@@ -15,7 +25,7 @@ createBtn.addEventListener('click', () => {
 function createCanvas(size) {
   container.innerHTML = '';
 
-  const cellSize = 920 / size;
+  const cellSize = 720 / size;
 
   for (let i = 0; i < size * size; i++) {
     const cell = document.createElement('div');
@@ -28,8 +38,27 @@ function createCanvas(size) {
   }
 }
 
+let color = null;
+let activeBtn = null;
+
+const tools = document.getElementById('tools');
+tools.addEventListener('click', (e) => {
+  if (e.target.tagName !== 'BUTTON') return;
+
+  const button = e.target;
+
+  if (activeBtn) {
+    activeBtn.classList.remove('toggled');
+  }
+
+  button.classList.add('toggled');
+  activeBtn = button;
+
+  color = button.dataset.value;
+});
+
 container.addEventListener('mouseover', (e) => {
   if (e.target.classList.contains('cell')) {
-    e.target.style.backgroundColor = 'black';
+    e.target.style.backgroundColor = color;
   }
 });

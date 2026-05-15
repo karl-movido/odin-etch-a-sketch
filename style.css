@@ -51,7 +51,7 @@ h1 {
   background-color: lightgray;
 }
 
-.new-canvas {
+.canvas-btn {
   background-color: #84a59d;
   padding: 12px 24px;
   border: none;
@@ -74,11 +74,12 @@ h1 {
 }
 
 .tools button {
-  border: none;
   width: 100px;
   height: 100px;
+  border: 1px solid transparent;
   border-radius: 16px;
   font-size: 1.1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .eraser {
@@ -100,4 +101,9 @@ h1 {
 }
 .yellow {
   background-color: #fff3b0;
+}
+
+button.toggled {
+  border: 2px solid #f6bd60;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }

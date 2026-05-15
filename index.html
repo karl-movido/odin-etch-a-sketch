@@ -14,14 +14,19 @@
     <h1>Etch-A-Sketch</h1>
     <div class="main-wrapper">
       <div class="left">
-        <button id="new-canvas" class="new-canvas">Create Canvas</button>
+        <button id="new-canvas" class="canvas-btn">Create Canvas</button>
+
         <p id="size-display" class="size-display">Size: 16 x 16</p>
-        <div class="tools">
-          <button id="eraser" class="eraser">Eraser</button>
-          <button id="black" class="black">Black</button>
-          <button id="red" class="red">Red</button>
-          <button id="blue" class="blue">Blue</button>
-          <button id="yellow" class="yellow">Yellow</button>
+        <div class="tools" id="tools">
+          <button id="eraser" class="eraser" data-value="lightgray">
+            Eraser
+          </button>
+          <button id="black" class="black" data-value="black">Black</button>
+          <button id="red" class="red" data-value="#e63946">Red</button>
+          <button id="blue" class="blue" data-value="#0077b6">Blue</button>
+          <button id="yellow" class="yellow" data-value="#fff3b0">
+            Yellow
+          </button>
         </div>
       </div>
       <div class="middle">
